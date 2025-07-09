@@ -49,3 +49,20 @@ func twoSum(nums []int, target int) []int {
 	}
 	return res
 }
+
+
+func twoSum2(nums []int, target int) []int {
+    if len(nums) < 2 {
+        return []int{}
+    }
+    res := make([]int, 0, 2)
+
+    for i:= 0; i < len(nums)-1; i++ {
+        for k:=i+1; k<len(nums); k++{
+            if nums[i] + nums[k] == target {
+                return []int{i,k}
+            }
+        }
+    }
+    return res
+}
